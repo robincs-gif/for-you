@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For My Ella ❤️</title>
+    <title>To My Love ❤️</title>
     <style>
         /* Background & Text */
         body {
@@ -16,7 +16,6 @@
 
         h1 {
             font-size: 2.5em;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         p {
@@ -84,33 +83,6 @@
         .gallery img:hover {
             transform: scale(1.1);
         }
-
-        /* Interactive Question */
-        .question-container {
-            margin-top: 30px;
-        }
-
-        .question-container button {
-            background-color: #ff4d6d;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            margin: 10px;
-            font-size: 18px;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .question-container button:hover {
-            background-color: #ff1c49;
-        }
-
-        .response {
-            font-size: 1.5em;
-            margin-top: 20px;
-            display: none;
-        }
     </style>
 </head>
 <body>
@@ -145,32 +117,12 @@
         </audio>
     </div>
 
-    <!-- Photo Gallery (Add Your Own Images) -->
+    <!-- Photo Gallery -->
     <div class="gallery">
         <img src="your-photo1.jpg" alt="Us Together">
         <img src="your-photo2.jpg" alt="Sweet Memories">
         <img src="your-photo3.jpg" alt="Our Special Moments">
     </div>
-
-    <!-- Interactive Question -->
-    <div class="question-container">
-        <h2>Are you mad at me? 😢</h2>
-        <button onclick="showResponse('yes')">Yes, I am mad at you >:(</button>
-        <button onclick="showResponse('no')">No, I love you ❤️</button>
-        <p id="response" class="response"></p>
-    </div>
-
-    <script>
-        function showResponse(answer) {
-            let responseText = document.getElementById("response");
-            if (answer === "yes") {
-                responseText.innerHTML = "Oh no! 🥺 Please forgive me! I'll make it up to you! 💖";
-            } else {
-                responseText.innerHTML = "Yay! I love you so much! ❤️❤️❤️";
-            }
-            responseText.style.display = "block";
-        }
-    </script>
 
 </body>
 </html>
