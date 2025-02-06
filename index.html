@@ -5,124 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To My Ella ❤️</title>
     <style>
-        /* Background & Text */
         body {
             background: linear-gradient(to right, #ff758c, #ff7eb3);
             color: white;
             font-family: 'Arial', sans-serif;
             text-align: center;
-            padding: 20px;
+            padding: 50px;
         }
 
         h1 {
             font-size: 2.5em;
         }
 
-        p {
-            font-size: 1.2em;
+        .question-container {
+            margin-top: 30px;
         }
 
-        /* Heart Animation */
-        .heart {
-            font-size: 50px;
-            color: red;
-            animation: pulse 1.5s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-            100% { transform: scale(1); }
-        }
-
-        /* Floating Hearts */
-        .floating-hearts {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        .heart-shape {
-            position: absolute;
-            color: red;
-            font-size: 30px;
-            animation: float 5s linear infinite;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
-            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
-        }
-
-        /* Music Player */
-        .music-container {
-            margin-top: 20px;
-        }
-
-        /* Photo Gallery */
-        .gallery {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-
-        .gallery img {
-            width: 150px;
-            height: 150px;
+        .question-container button {
+            background-color: #ff4d6d;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 18px;
             border-radius: 10px;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s;
+            cursor: pointer;
+            transition: 0.3s;
         }
 
-        .gallery img:hover {
-            transform: scale(1.1);
+        .question-container button:hover {
+            background-color: #ff1c49;
+        }
+
+        .response {
+            font-size: 1.5em;
+            margin-top: 20px;
+            display: none;
         }
     </style>
 </head>
 <body>
 
-    <h1>To My Dearest Ella ❤️</h1>
-    <p>Even though we're miles apart, my heart is always with you.</p>
-    <p>You make every day special, and I can't wait to see you soon!</p>
-    <p class="heart">❤️</p>
-    <p>Love you forever, Ravishing Robin</p>
+    <h1>Before You Proceed... 🥰</h1>
+    <p>Answer this first!</p>
 
-    <!-- Floating Hearts Animation -->
-    <div class="floating-hearts">
-        <script>
-            for (let i = 0; i < 20; i++) {
-                let heart = document.createElement("div");
-                heart.className = "heart-shape";
-                heart.innerHTML = "❤️";
-                heart.style.left = Math.random() * 100 + "vw";
-                heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
-                heart.style.fontSize = (Math.random() * 20 + 10) + "px";
-                document.querySelector(".floating-hearts").appendChild(heart);
+    <!-- Interactive Question -->
+    <div class="question-container">
+        <h2>Are you mad at me? 😢</h2>
+        <button onclick="showResponse('yes')">Yes, I am mad at you >:(</button>
+        <button onclick="showResponse('no')">No, I love you ❤️</button>
+        <p id="response" class="response"></p>
+    </div>
+
+    <script>
+        function showResponse(answer) {
+            let responseText = document.getElementById("response");
+            if (answer === "yes, I am mad at you >:(") {
+                responseText.innerHTML = "I'm Sorry that I have been sucking a lot lately. I didn't mean it to be like that";
+                setTimeout(() => { window.location.href = "letter.html"; }, 3000);
+            } else {
+                responseText.innerHTML = "Yay! Even if you are not, it doesn't mean I have to lack my effort for you. I want to make you feel like you're the best! Redirecting...";
+                setTimeout(() => { window.location.href = "letter.html"; }, 2000);
             }
-        </script>
-    </div>
-
-    <!-- Romantic Music -->
-    <div class="music-container">
-        <p>🎶 Play our song:</p>
-        <audio controls>
-            <source src="your-song.mp3" type="audio/mp3">
-            Your browser does not support the audio tag.
-        </audio>
-    </div>
-
-    <!-- Photo Gallery -->
-    <div class="gallery">
-        <img src="your-photo1.jpg" alt="Us Together">
-        <img src="your-photo2.jpg" alt="Sweet Memories">
-        <img src="your-photo3.jpg" alt="Our Special Moments">
-    </div>
+            responseText.style.display = "block";
+        }
+    </script>
 
 </body>
 </html>
