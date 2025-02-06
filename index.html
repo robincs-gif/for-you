@@ -60,14 +60,18 @@
     <script>
         function showResponse(answer) {
             let responseText = document.getElementById("response");
-            if (answer === "yes, I am mad at you >:(") {
-                responseText.innerHTML = "I'm Sorry that I have been sucking a lot lately. I didn't mean it to be like that";
-                setTimeout(() => { window.location.href = "letter.html"; }, 3000);
+    
+            if (answer === "yes") {
+                responseText.innerHTML = "Oh no! 🥺 Please forgive me! I'll make it up to you! 💖";
             } else {
-                responseText.innerHTML = "Yay! Even if you are not, it doesn't mean I have to lack my effort for you. I want to make you feel like you're the best! Redirecting...";
-                setTimeout(() => { window.location.href = "letter.html"; }, 2000);
+                responseText.innerHTML = "Yay! I love you so much! ❤️ Redirecting...";
             }
+    
             responseText.style.display = "block";
+    
+            localStorage.setItem("answered", "true");
+    
+            setTimeout(() => { window.location.href = "letter.html"; }, 3000);
         }
     </script>
 
