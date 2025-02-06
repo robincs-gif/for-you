@@ -3,38 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For My Ella</title>
+    <title>For My Love ❤️</title>
     <style>
+        /* Background & Text */
         body {
-            background-color: #ffe6f2;
-            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            color: white;
+            font-family: 'Arial', sans-serif;
             text-align: center;
             padding: 20px;
         }
+
         h1 {
-            color: #d63384;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
+
         p {
-            font-size: 18px;
-            color: #333;
+            font-size: 1.2em;
         }
+
+        /* Heart Animation */
         .heart {
             font-size: 50px;
             color: red;
             animation: pulse 1.5s infinite;
         }
+
         @keyframes pulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.2); }
             100% { transform: scale(1); }
         }
+
+        /* Floating Hearts */
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .heart-shape {
+            position: absolute;
+            color: red;
+            font-size: 30px;
+            animation: float 5s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* Music Player */
+        .music-container {
+            margin-top: 20px;
+        }
+
+        /* Photo Gallery */
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .gallery img {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body>
+
     <h1>To My Dearest Ella ❤️</h1>
+    <p>I know lately everything has been rocky between us and it's both affecting us</p>
+    <p></p>
     <p>Even though we're miles apart, my heart is always with you.</p>
     <p>You make every day special, and I can't wait to see you soon!</p>
     <p class="heart">❤️</p>
     <p>Love you forever, Ravishing Robin</p>
+
+    <!-- Floating Hearts Animation -->
+    <div class="floating-hearts">
+        <script>
+            for (let i = 0; i < 20; i++) {
+                let heart = document.createElement("div");
+                heart.className = "heart-shape";
+                heart.innerHTML = "❤️";
+                heart.style.left = Math.random() * 100 + "vw";
+                heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+                heart.style.fontSize = (Math.random() * 20 + 10) + "px";
+                document.querySelector(".floating-hearts").appendChild(heart);
+            }
+        </script>
+    </div>
+
+    <!-- Romantic Music -->
+    <div class="music-container">
+        <p>🎶 Play our song:</p>
+        <audio controls>
+            <source src="your-song.mp3" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+    </div>
+
+    <!-- Photo Gallery (Add Your Own Images) -->
+    <div class="gallery">
+        <img src="your-photo1.jpg" alt="Us Together">
+        <img src="your-photo2.jpg" alt="Sweet Memories">
+        <img src="your-photo3.jpg" alt="Our Special Moments">
+    </div>
+
 </body>
 </html>
