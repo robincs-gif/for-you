@@ -54,7 +54,8 @@
     <div class="question-container">
         <h2>Are you mad at me? </h2>
         <button onclick="showResponse('yes')">Yes, I am mad at you >:(</button>
-        <button onclick="showResponse('no')">No, I love you ❤️</button>
+        <button onclick="showResponse('yesagain')">Yes, I am really mad at you! >:(</button>
+        <button onclick="showResponse('no')">No, just a little bit</button>
         <p id="response" class="response"></p>
     </div>
 
@@ -63,9 +64,12 @@
             let responseText = document.getElementById("response");
     
             if (answer === "yes") {
-                responseText.innerHTML = "Oh no! 🥺 Please forgive me! I'll make it up to you! 💖";
+                responseText.innerHTML = "Yeah, I know. Don't worry, I'll make it up to you! Now, wait for the page to load";
+            
+            } if (answer == "yesagain") {responseText.innerHTML = "Yeah, I really know that. I'm sorry again. I'm sorrrryyyyyyyyyy";
+            
             } else {
-                responseText.innerHTML = "Yay! I love you so much! ❤️ Redirecting...";
+                responseText.innerHTML = "Yay! I'll continue to become the best! ❤️ Redirecting...";
             }
     
             responseText.style.display = "block";
